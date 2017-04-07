@@ -1,0 +1,390 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/inxilpro/node-app-root-path"
+
+    >app-root-path (v2.0.1)</a>
+</h1>
+<h4>Determine an app's root path from anywhere inside the app</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-root-path">module app-root-path</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-root-path.require">
+            function <span class="apidocSignatureSpan">app-root-path.</span>require
+            <span class="apidocSignatureSpan">(pathToModule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-root-path.resolve">
+            function <span class="apidocSignatureSpan">app-root-path.</span>resolve
+            <span class="apidocSignatureSpan">(pathToModule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-root-path.setPath">
+            function <span class="apidocSignatureSpan">app-root-path.</span>setPath
+            <span class="apidocSignatureSpan">(explicitlySetPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">app-root-path.</span>browser_shim</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">app-root-path.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-root-path.browser_shim">module app-root-path.browser_shim</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-root-path.browser_shim.require">
+            function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>require
+            <span class="apidocSignatureSpan">(pathToModule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-root-path.browser_shim.resolve">
+            function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>resolve
+            <span class="apidocSignatureSpan">(pathToModule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-root-path.browser_shim.setPath">
+            function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>setPath
+            <span class="apidocSignatureSpan">(explicitlySetPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-root-path.browser_shim.toString">
+            function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-root-path" id="apidoc.module.app-root-path">module app-root-path</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-root-path.require" id="apidoc.element.app-root-path.require">
+        function <span class="apidocSignatureSpan">app-root-path.</span>require
+        <span class="apidocSignatureSpan">(pathToModule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require = function (pathToModule) {
+			return require(publicInterface.resolve(pathToModule));
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  - No changes.  Just updated the version to signify a locked API (see [semver](http://semver.org/)).
+
+### 0.1.1
+  - Added Windows support (and, theoretically, other operating systems that have a directory separator that&#x27;s not &#x22;/&#
+x22;)
+
+### 0.1.0
+  - Completely rewrote the path resolution method to account for most possible scenarios.  This shouldn&#x27;t cause and backwards
+ compatibility issues, but always test your code.
+  - Removed the need to pass a modules&#x27;s `require()` method to the `appRootPath.<span class="apidocCodeKeywordSpan">require
+</span>()` function.  Which it&#x27;s true that each module has its own `require()` method, in practice it doesn&#x27;t matter,
+and it&#x27;s **much** simpler this way.
+  - Added tests
+
+## Development Nodes
+
+When using [semantic-release](https://github.com/semantic-release/semantic-release), the preferred method
+for commits is:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-root-path.resolve" id="apidoc.element.app-root-path.resolve">
+        function <span class="apidocSignatureSpan">app-root-path.</span>resolve
+        <span class="apidocSignatureSpan">(pathToModule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (pathToModule) {
+			return path.join(appRootPath, pathToModule);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// In lib/module/component/subcomponent.js
+var myModule = reqlib(&#x27;/lib/my-module.js&#x27;);
+```
+
+Finally, you can also just resolve a module path:
+
+``` js
+var myModulePath = require(&#x27;app-root-path&#x27;).<span class="apidocCodeKeywordSpan">resolve</span>(&#x27;/lib/my-module.js
+&#x27;);
+```
+
+You can explicitly set the path, using the environmental variable `APP_ROOT_PATH` or by calling `require(&#x27;app-root-path&#x27
+;).setPath(&#x27;/my/app/is/here&#x27;)`
+
+## How It Works (under the hood)
+
+&#x3e; No need to read this unless your curious—or you run into a (very unlikely) case where the module does not work as expected
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-root-path.setPath" id="apidoc.element.app-root-path.setPath">
+        function <span class="apidocSignatureSpan">app-root-path.</span>setPath
+        <span class="apidocSignatureSpan">(explicitlySetPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPath = function (explicitlySetPath) {
+			appRootPath = path.resolve(explicitlySetPath);
+			publicInterface.path = appRootPath;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Finally, you can also just resolve a module path:
+
+``` js
+var myModulePath = require(&#x27;app-root-path&#x27;).resolve(&#x27;/lib/my-module.js&#x27;);
+```
+
+You can explicitly set the path, using the environmental variable `APP_ROOT_PATH` or by calling `require(&#x27;app-root-path&#x27
+;).<span class="apidocCodeKeywordSpan">setPath</span>(&#x27;/my/app/is/here&#x27;)`
+
+## How It Works (under the hood)
+
+&#x3e; No need to read this unless your curious—or you run into a (very unlikely) case where the module does not work as expected
+.
+
+This module uses two different methods to determine the app&#x27;s root path, depending on the circumstances.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-root-path.browser_shim" id="apidoc.module.app-root-path.browser_shim">module app-root-path.browser_shim</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-root-path.browser_shim.require" id="apidoc.element.app-root-path.browser_shim.require">
+        function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>require
+        <span class="apidocSignatureSpan">(pathToModule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require = function (pathToModule) {
+	return require(exports.resolve(pathToModule));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  - No changes.  Just updated the version to signify a locked API (see [semver](http://semver.org/)).
+
+### 0.1.1
+  - Added Windows support (and, theoretically, other operating systems that have a directory separator that&#x27;s not &#x22;/&#
+x22;)
+
+### 0.1.0
+  - Completely rewrote the path resolution method to account for most possible scenarios.  This shouldn&#x27;t cause and backwards
+ compatibility issues, but always test your code.
+  - Removed the need to pass a modules&#x27;s `require()` method to the `appRootPath.<span class="apidocCodeKeywordSpan">require
+</span>()` function.  Which it&#x27;s true that each module has its own `require()` method, in practice it doesn&#x27;t matter,
+and it&#x27;s **much** simpler this way.
+  - Added tests
+
+## Development Nodes
+
+When using [semantic-release](https://github.com/semantic-release/semantic-release), the preferred method
+for commits is:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-root-path.browser_shim.resolve" id="apidoc.element.app-root-path.browser_shim.resolve">
+        function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>resolve
+        <span class="apidocSignatureSpan">(pathToModule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (pathToModule) {
+	return exports.path + pathToModule;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// In lib/module/component/subcomponent.js
+var myModule = reqlib(&#x27;/lib/my-module.js&#x27;);
+```
+
+Finally, you can also just resolve a module path:
+
+``` js
+var myModulePath = require(&#x27;app-root-path&#x27;).<span class="apidocCodeKeywordSpan">resolve</span>(&#x27;/lib/my-module.js
+&#x27;);
+```
+
+You can explicitly set the path, using the environmental variable `APP_ROOT_PATH` or by calling `require(&#x27;app-root-path&#x27
+;).setPath(&#x27;/my/app/is/here&#x27;)`
+
+## How It Works (under the hood)
+
+&#x3e; No need to read this unless your curious—or you run into a (very unlikely) case where the module does not work as expected
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-root-path.browser_shim.setPath" id="apidoc.element.app-root-path.browser_shim.setPath">
+        function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>setPath
+        <span class="apidocSignatureSpan">(explicitlySetPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPath = function (explicitlySetPath) {
+	exports.path = explicitlySetPath;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Finally, you can also just resolve a module path:
+
+``` js
+var myModulePath = require(&#x27;app-root-path&#x27;).resolve(&#x27;/lib/my-module.js&#x27;);
+```
+
+You can explicitly set the path, using the environmental variable `APP_ROOT_PATH` or by calling `require(&#x27;app-root-path&#x27
+;).<span class="apidocCodeKeywordSpan">setPath</span>(&#x27;/my/app/is/here&#x27;)`
+
+## How It Works (under the hood)
+
+&#x3e; No need to read this unless your curious—or you run into a (very unlikely) case where the module does not work as expected
+.
+
+This module uses two different methods to determine the app&#x27;s root path, depending on the circumstances.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-root-path.browser_shim.toString" id="apidoc.element.app-root-path.browser_shim.toString">
+        function <span class="apidocSignatureSpan">app-root-path.browser_shim.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+	return exports.path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
